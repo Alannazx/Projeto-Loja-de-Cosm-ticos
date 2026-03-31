@@ -14,4 +14,21 @@ $stmt = $this->conn->prepare($sql);
 $stmt->execute([':email' => $email]);
 return $stmt->fetch();
 }
+public function cadastrar($nome, $email, $senha_hash, $perfil = 'vendedor', $ativo = 1)
+    {
+        $sql = "INSERT INTO usuario (nome, email, senha, perfil, ativo)
+                VALUES (:nome, :email, :senha, :perfil, :ativo)";
+       
+        $stmt = $this->conn->prepare($sql);
+       
+        return $stmt->execute([
+            ':nome'   => $nome,
+            ':email'  => $email,
+            ':senha'  => $senha_hash,
+            ':perfil' => $perfil,
+            ':ativo'  => $ativo
+        ]);
+    }
+
+
 }
