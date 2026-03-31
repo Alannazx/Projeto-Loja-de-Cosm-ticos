@@ -1,4 +1,3 @@
-
 <?php
 class Database
 {
@@ -24,4 +23,3 @@ die("Erro ao conectar ao banco de dados.");
 return self::$conn;
 }
 }
-
