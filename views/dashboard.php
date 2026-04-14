@@ -1,4 +1,3 @@
-
 <?php
 $nome = $_SESSION['nome'] ?? 'Usuário';
 $perfil = $_SESSION['perfil'] ?? 'vendedor';
@@ -7,9 +6,9 @@ $perfil = $_SESSION['perfil'] ?? 'vendedor';
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Dashboard - Loja Cosplay</title>
+<title>Dashboard - Loja de Cosméticos Pink Honey</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="public/assets/css/style.css">
+<link rel="stylesheet" href="/lojacosmeticos_alalet/public/assets/css/style.css">
 </head>
 <body>
 
@@ -37,13 +36,13 @@ Escolha um módulo para continuar.
 <div class="nav">
 
 
-<a href="/loja_roupas/index.php?controller=produto&action=index">Produtos /
+<a href="/lojacosmeticos_alalet/index.php?controller=produto&action=index">Produtos /
 
 
 Categorias</a>
-<a href="/loja_roupas/index.php?controller=entrada&action=index">Entradas</a>
-<a href="/loja_roupas/index.php?controller=venda&action=index">Vendas</a>
-<a href="/loja_roupas/index.php?controller=relatorio&action=index">Relatórios</a>
+<a href="/lojacosmeticos_alalet/index.php?controller=entrada&action=index">Entradas</a>
+<a href="/lojacosmeticos_alalet/index.php?controller=venda&action=index">Vendas</a>
+<a href="/lojacosmeticos_alalet/index.php?controller=relatorio&action=index">Relatórios</a>
 </div>
 <div class="kpis">
 <div class="kpi">
