@@ -31,4 +31,5 @@ public function cadastrar($nome, $email, $senha_hash, $perfil = 'vendedor', $ati
     }
 
 
+
 }
