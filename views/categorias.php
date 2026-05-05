@@ -7,7 +7,7 @@ $nomeUser = $_SESSION['nome'] ?? 'Usuário';
 <meta charset="utf-8">
 <title>Categorias</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/loja_roupas/public/assets/src/style.css"
+<link rel="stylesheet" href="/lojacosmeticos_alalet/public/assets/src/style.css"
 </head>
 <body>
 <div class="container">
@@ -21,7 +21,7 @@ $nomeUser = $_SESSION['nome'] ?? 'Usuário';
 </div>
 <div class="pill">
 Olá, <strong><?= htmlspecialchars($nomeUser) ?></strong>
-• <a href="/loja_roupas/index.php?controller=auth&action=logout">Sair</a>
+• <a href="/lojacosmeticos_alalet/index.php?controller=auth&action=logout">Sair</a>
 </div>
 </div>
 <div class="grid" style="grid-template-columns: 1fr 2fr;">
@@ -80,7 +80,7 @@ href="index.php?controller=categoria&action=toggle&id=<?= (int)$c['id']
 </tbody>
 </table>
 <div style="margin-top:14px;">
-<a class="btn" href="/loja_roupas/index.php?controller=auth&action=dashboard">Voltar ao
+<a class="btn" href="/lojacosmeticos_alalet/index.php?controller=auth&action=dashboard">Voltar ao
 Dashboard</a>
 </div>
 </div>
