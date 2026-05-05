@@ -2,11 +2,15 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="public/assets/style.css">
     <title>Login - Loja Pink Honey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/lojacosmeticos_alalet/public/assets/css/style.css">
+
 </head>
 <body>
+
+
+
 <div class="container">
     <div class="card" style="max-width:520px; margin:70px auto;">
         <div class="brand">
