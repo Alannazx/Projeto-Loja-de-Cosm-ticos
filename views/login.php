@@ -1,312 +1,439 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="public/assets/style.css">
-    <title>Login - Loja Pink Honey</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Login - Loja Pink Honey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-</head>
-<body>
-
-<style> 
-/*css*/
+/* =========================
+  CORES
+========================= */
 :root{
-  --bg1:#FFD3F0;
-  --bg2:#BA00A6;
-  --card:#EB5EDB;
+ --bg1:#FFD3F0;
+ --bg2:#FF277B;
+ --card:#FFF7D6;
 
-   --txt:#000000;
-  --muted:#7D7777;
+ --txt:#000;
+ --muted:#7D7777;
 
-   --neon1:#FC9DF3; /* rosa */
-  --neon2:#FC9DF3; /* azul */
+ --pink:#de5d7a;
+ --pink-dark:#de5d7a;
 
-   --radius:18px;
-  --shadow:0 18px 60px rgba(255, 250, 250, 0.45);
+ --radius:40px;
+ --shadow:0 18px 60px rgba(255, 250, 250, 0.45);
 }
 
- /* ===============================
-   RESET BÁSICO
-   =============================== */
+.logo{
+ width:55px;
+ height:55px;
+
+ border-radius:50%;
+
+ overflow:hidden;
+
+ display:flex;
+ align-items:center;
+ justify-content:center;
+}
+
+.logo img{
+ width:110%;
+ height:110%;
+
+ object-fit:cover;
+
+ border-radius:50%;
+}
+
+
+
+/* =========================
+  RESET BÁSICO
+========================= */
 *{
-  box-sizing:border-box;
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
 }
 
- html, body{
-  height:100%;
-}
+body{
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
 
- body{
-  margin:0;
-font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--txt);
+ font-family: Arial , Helvetica, sans-serif;
 
-   background:
-    radial-gradient(900px 500px at 10% 15%, rgba(255, 82, 220, 0.25), transparent 60%),
-    radial-gradient(900px 500px at 90% 25%, rgba(234, 0, 255, 0.2), transparent 60%),
-    radial-gradient(900px 500px at 50% 90%, rgba(239, 255, 91, 0.12), transparent 60%),
-    linear-gradient(180deg, var(--bg1), var(--bg2));
+ background:
+  radial-gradient(900px 500px at 10% 15%, rgba(255, 82, 220, 0.25), transparent 60%),
+  radial-gradient(900px 500px at 90% 25%, rgba(234, 0, 255, 0.2), transparent 60%),
+  radial-gradient(900px 500px at 50% 90%, rgba(239, 255, 91, 0.12), transparent 60%),
+  linear-gradient(180deg, var(--bg1), var(--bg2));
 }
 
  /* ===============================
-   LINKS
-   =============================== */
+  LINKS
+  =============================== */
 a{
-  color:var(--neon2);
-  text-decoration:none;
+ color:var( --pink-dark);
+ text-decoration:none;
 }
 
  a:hover{
-  text-decoration:underline;
+ text-decoration:underline;
 }
 
- /* ===============================
-   CONTAINER E CARD
-   =============================== */
+
+/* =========================
+  CONTAINER
+========================= */
 .container{
-  width:min(1100px, 92vw);
-  margin:0 auto;
-  padding:100px 0;
+ width:1000px;
+ height:560px;
+
+ background:var(--card);
+
+ border-radius:var(--radius);
+
+ overflow:hidden;
+
+ display:flex;
+
+ box-shadow:0 15px 40px rgba(255, 255, 255, 0.2);
 }
 
- .card{
-  background:linear-gradient(180deg, rgba(255, 254, 198, 0.92), rgba(255, 254, 190, 0.92));
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:22px;
+/* =========================
+  IMAGEM ESQUERDA
+========================= */
+.left{
+ width:50%;
+
+ background:
+url('https://moocyn.com/wp-content/uploads/2023/03/a0469987c74a3f9abcf6449f2c0dc2f6.jpg') center/cover no-repeat;
 }
 
- /* ===============================
-   BRAND / TOPO
-   =============================== */
+/* =========================
+  LOGIN DIREITA
+========================= */
+.right{
+ width:50%;
+
+ padding:50px;
+
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+}
+
+/* =========================
+  TOPO
+========================= */
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:16px;
+ display:flex;
+ align-items:center;
+ gap:15px;
+ margin-bottom:30px;
 }
 
- .badge{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  background:
-    radial-gradient(circle at 30% 30%, rgba(250, 34, 207, 0.9), transparent 60%),
-    radial-gradient(circle at 70% 70%, rgba(235, 155, 255, 0.9), transparent 60%),
-    linear-gradient(135deg, rgba(238, 255, 0, 0.61), rgba(255,43,214,.55));
-  box-shadow:0 0 30px rgba(255,43,214,.25);
+.logo{
+ width:55px;
+ height:55px;
+ border-radius:50%;
+ background: linear-gradient(135deg,#ff59d6,#ffc4ef);
+
+ box-shadow:0 0 20px rgba(255, 155, 238, 0.3);
 }
 
- .brand h1{
-  margin:0;
-  font-size:18px;
-  letter-spacing:.4px;
+.brand h1{
+ font-size:30px;
+ color:var(--txt);
 }
 
- .brand small{
-  display:block;
-  margin-top:2px;
-  color:var(--muted);
+.brand small{
+ color:var(--muted);
+ font-size:14px;
 }
 
- /* ===============================
-   TOPBAR
-   =============================== */
+/* ===============================
+  TOPBAR
+  =============================== */
 .topbar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-  margin-bottom:16px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:14px;
+ margin-bottom:16px;
 }
 
  .pill{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.10);
-  color:var(--muted);
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ padding:10px 14px;
+ border-radius:999px;
+ background:rgba(255,255,255,.06);
+ border:1px solid rgba(255,255,255,.10);
+ color:var(--muted);
 }
 
  .pill strong{
-  color:var(--txt);
+ color:var(--txt);
 }
 
- /* ===============================
-   FORMULÁRIOS
-   =============================== */
+/* ===============================
+  FORMULÁRIOS
+  =============================== */
 label{
-  display:block;
-  margin:14px 0 6px;
-  color:var(--muted);
-  font-size:14px;
+ display:block;
+ margin:14px 0 6px;
+ color:var(--muted);
+ font-size:14px;
 }
 
  input, select{
-  width:100%;
-  padding:12px;
-  border-radius:14px;
-  border:1px solid rgba(253, 253, 253, 0.1);
-  background:rgba(0, 0, 0, 0.25);
-  color:var(--txt);
-  outline:none;
+ width:100%;
+ padding:12px;
+ border-radius:14px;
+ border:1px solid rgba(253, 253, 253, 0.1);
+ background:rgba(0, 0, 0, 0.25);
+ color:var(--txt);
+ outline:none;
 }
 
  input:focus, select:focus{
-  border-color:rgba(0,229,255,.55);
-  box-shadow:0 0 0 3px rgba(0,229,255,.18);
+ border-color:rgba(0,229,255,.55);
+ box-shadow:0 0 0 3px rgba(0,229,255,.18);
 }
 
- /* ===============================
-   BOTÕES
-   =============================== */
+/* ===============================
+  BOTÕES
+  =============================== */
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 16px;
-  border-radius:10px;
-  border:0;
-  cursor:pointer;
-  font-weight:800;
-  color:#0b0b1a;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ padding:10px 16px;
+ border-radius:10px;
+ border:0;
+ cursor:pointer;
+ font-weight:800;
+ color:#0b0b1a;
 
-   background:linear-gradient(90deg, var(--neon2), var(--neon1));
-  box-shadow:0 10px 30px rgba(250, 49, 210, 0.18);
+  background:linear-gradient(90deg, var(--pink), var(--pink-dark));
+ box-shadow:0 10px 30px rgba(250, 49, 210, 0.18);
 }
 
  .btn:hover{
-  filter:brightness(1.05);
+ filter:brightness(1.05);
 }
 
  .btn-secondary{
-  background:linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
-  color:var(--txt);
-  border:1px solid rgba(255,255,255,.12);
+ background:linear-gradient(90deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+ color:var(--txt);
+ border:1px solid rgba(255,255,255,.12);
 }
 
- /* ===============================
-   NAVEGAÇÃO
-   =============================== */
+
+
+/* =========================
+  BOTÕES
+========================= */
+.buttons{
+ margin-top:25px;
+
+ display:flex;
+ justify-content:flex-end;
+ gap:10px;
+}
+
+.btn{
+ padding:13px 28px;
+
+ border:none;
+
+ border-radius:12px;
+
+ background:var(--pink);
+
+ color:#000;
+
+ font-weight:bold;
+
+ cursor:pointer;
+
+ text-decoration:none;
+
+ transition:.3s;
+}
+
+.btn:hover{
+ background:var(--pink-dark);
+ transform:scale(1.05);
+}
+
+/* ===============================
+  NAVEGAÇÃO
+  =============================== */
 .nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:16px;
+ display:flex;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:16px;
 }
 
  .nav a{
-  padding:10px 14px;
-  border-radius:14px;
-  background:rgba(0,0,0,.20);
-  border:1px solid rgba(255,255,255,.10);
+ padding:10px 14px;
+ border-radius:14px;
+ background:rgba(0,0,0,.20);
+ border:1px solid rgba(255,255,255,.10);
 }
 
  .nav a:hover{
-  border-color:rgba(255,43,214,.40);
-  box-shadow:0 0 0 3px rgba(255,43,214,.12);
+ border-color:rgba(255,43,214,.40);
+ box-shadow:0 0 0 3px rgba(255,43,214,.12);
 }
 
- /* ===============================
-   KPIs / DASHBOARD
-   =============================== */
+/* ===============================
+  KPIs / DASHBOARD
+  =============================== */
 .kpis{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:14px;
-  margin-top:18px;
+ display:grid;
+ grid-template-columns:repeat(4, 1fr);
+ gap:14px;
+ margin-top:18px;
 }
 
  .kpi{
-  padding:16px;
-  border-radius:var(--radius);
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.08);
+ padding:16px;
+ border-radius:var(--radius);
+ background:rgba(255,255,255,.05);
+ border:1px solid rgba(255,255,255,.08);
 }
 
  .kpi .label{
-  color:var(--muted);
-  font-size:13px;
+ color:var(--muted);
+ font-size:13px;
 }
 
  .kpi .value{
-  font-size:22px;
-  font-weight:800;
-  margin-top:6px;
+ font-size:22px;
+ font-weight:800;
+ margin-top:6px;
 }
 
- /* ===============================
-   RESPONSIVO
-   =============================== */
+/* =========================
+  TEXTO
+========================= */
+.info{
+ margin-top:25px;
+
+ color:var(--muted);
+
+ font-size:14px;
+
+ line-height:22px;
+}
+/* ===============================
+  FONTE
+  =============================== */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.bodoni-moda-uniquifier {
+ font-family: "Bodoni Moda", serif;
+ font-optical-sizing: auto;
+ font-weight: weight;
+ font-style: normal;
+}
+
+/* ===============================
+  FIM DA FONTE
+  =============================== */
+
+
+
+
+/* ===============================
+  RESPONSIVO
+  =============================== */
 @media (max-width:900px){
-  .topbar{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+ .topbar{
+  flex-direction:column;
+  align-items:flex-start;
+ }
 
-   .kpis{
-    grid-template-columns:repeat(2, 1fr);
-  }
+  .kpis{
+  grid-template-columns:repeat(2, 1fr);
+ }
 } 
-
-.table { width:100%; border-collapse: collapse; }
-.table th, .table td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,.12); vertical-align: middle; }
-.thumb { width:56px; height:56px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,.18); }
-.tag { padding: 4px 10px; border-radius: 999px; font-size: 12px; display: inline-block; }
-.tag.ok { background: rgba(0,255,170,.15); border: 1px solid rgba(0,255,170,.35); }
-.tag.off { background: rgba(255,80,80,.12); border: 1px solid rgba(255,80,80,.35); }
-.btn-success { background: rgba(0,255,170,.18); border: 1px solid rgba(0,255,170,.35); }
-.muted { opacity: .8; font-size: 12px; }
-.grid { display: grid; grid-template-columns: 380px 1fr; gap: 16px; align-items: start; }
-.header-inner { display:flex; justify-content: space-between; align-items:center; }
-.badge { margin-left: 8px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); }
-
-
-
-
-
-
-
-
 </style>
+</head>
 
+<body>
 <div class="container">
-    <div class="card" style="max-width:520px; margin:70px auto;">
-        <div class="brand">
-            <div class="badge"></div>
-            <div>
-                <h1>Loja de Cosméticos Pink Honey</h1>
-                <small>Acesso ao sistema</small>
-            </div>
-        </div>
-       
-        <form method="post" action="/lojacosmeticos_alalet/index.php?controller=auth&action=login">
-            <label>E-mail</label>
-            <input type="email" name="email" required autocomplete="username">
-           
-            <label>Senha</label>
-            <input type="password" name="senha" required autocomplete="current-password">
-           
-            <div style="margin-top:16px; display:flex; justify-content:flex-end; align-items: center;">
-                <button class="btn" type="submit">Entrar</button>
-               
-                <a href="index.php?controller=usuario&action=create" class="btn" style="margin: 3px; text-decoration: none; text-align: center; display: inline-block;">
-                    Cadastrar
-                </a>
-            </div>
-        </form>
 
+ <!-- IMAGEM -->
+ <div class="left"></div>
 
-        <p style="margin-top:14px; color:var(--muted); font-size:13px;">
-            Dica: Se der erro, confirme se o usuário está <strong>ativo</strong> e se a senha está
-            salva com <strong>hash</strong>.
-        </p>
-    </div>
+ <!-- LOGIN -->
+ <div class="right">
+
+  <div class="brand">
+
+   <div class="logo">
+  <img src="public/assets/img/logophcfundo.png" alt="Logo">
 </div>
+
+   <div>
+    <h1 class="bodoni-moda-uniquifier"> Loja Pink Honey</h1>
+    <small>Acesso ao sistema</small>
+   </div>
+
+  </div>
+
+  <form method="post" action="/lojacosmeticos_alalet/index.php?controller=auth&action=login">
+
+   <label>E-mail</label>
+
+   <input 
+   type="email" 
+   name="email" 
+   required 
+   autocomplete="username">
+
+   <label>Senha</label>
+
+   <input 
+   type="password" 
+   name="senha" 
+   required 
+   autocomplete="current-password">
+
+   <div class="buttons">
+
+    <button class="btn" type="submit">
+     Entrar
+    </button>
+
+    <a href="index.php?controller=usuario&action=create" class="btn">
+     Cadastrar
+    </a>
+
+   </div>
+
+  </form>
+
+  <div class="info">
+   Dica: Se der erro, confirme se o usuário está 
+   <strong>ativo</strong> e se a senha está salva com 
+   <strong>hash</strong>.
+  </div>
+
+ </div>
+
+</div>
+
 </body>
 </html>
+
+
