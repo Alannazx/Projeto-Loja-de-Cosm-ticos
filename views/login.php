@@ -17,8 +17,8 @@
  --txt:#000;
  --muted:#7D7777;
 
- --pink:#de5d7a;
- --pink-dark:#de5d7a;
+ --pink:#F5B6C7;
+ --pink-dark:#F5B6C7;
 
  --radius:40px;
  --shadow:0 18px 60px rgba(255, 250, 250, 0.45);
@@ -38,8 +38,8 @@
 }
 
 .logo img{
- width:110%;
- height:110%;
+ width:160%;
+ height:160%;
 
  object-fit:cover;
 
@@ -89,8 +89,8 @@ a{
   CONTAINER
 ========================= */
 .container{
- width:1000px;
- height:560px;
+ width:1200px;
+ height:600px;
 
  background:var(--card);
 
@@ -137,8 +137,8 @@ url('https://moocyn.com/wp-content/uploads/2023/03/a0469987c74a3f9abcf6449f2c0dc
 }
 
 .logo{
- width:55px;
- height:55px;
+ width:70px;
+ height:70px;
  border-radius:50%;
  background: linear-gradient(135deg,#ff59d6,#ffc4ef);
 
@@ -146,13 +146,13 @@ url('https://moocyn.com/wp-content/uploads/2023/03/a0469987c74a3f9abcf6449f2c0dc
 }
 
 .brand h1{
- font-size:30px;
+ font-size:45px;
  color:var(--txt);
 }
 
 .brand small{
  color:var(--muted);
- font-size:14px;
+ font-size:16px;
 }
 
 /* ===============================
@@ -188,13 +188,13 @@ label{
  display:block;
  margin:14px 0 6px;
  color:var(--muted);
- font-size:14px;
+ font-size:16px;
 }
 
  input, select{
  width:100%;
- padding:12px;
- border-radius:14px;
+ padding:18px;
+ border-radius:20px;
  border:1px solid rgba(253, 253, 253, 0.1);
  background:rgba(0, 0, 0, 0.25);
  color:var(--txt);
@@ -202,8 +202,8 @@ label{
 }
 
  input:focus, select:focus{
- border-color:rgba(0,229,255,.55);
- box-shadow:0 0 0 3px rgba(0,229,255,.18);
+ border-color:rgba(255, 130, 218, 0.55);
+ box-shadow:0 0 0 3px rgba(247, 0, 255, 0.79);
 }
 
 /* ===============================
@@ -307,8 +307,8 @@ label{
  .kpi{
  padding:16px;
  border-radius:var(--radius);
- background:rgba(255,255,255,.05);
- border:1px solid rgba(255,255,255,.08);
+ background:rgba(255, 255, 255, 0.72);
+ border:1px solid rgba(255, 141, 203, 0.08);
 }
 
  .kpi .label{
@@ -435,5 +435,3 @@ label{
 
 </body>
 </html>
-
-
