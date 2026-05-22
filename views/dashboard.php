@@ -77,57 +77,58 @@ entradas, vendas e estoque.
 
 
 
-//////// Código chat
+
+/////////////// Código USADO/////////////////
+
+
 
 <?php
 $nome = $_SESSION['nome'] ?? 'Usuário';
 $perfil = $_SESSION['perfil'] ?? 'vendedor';
 ?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard - Pink Honey</title>
-
+<meta charset="utf-8">
+<title>Dashboard - Loja de Cosméticos Pink Honey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.dashboard{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
 }
+
 
 :root{
-    --bg1:#FFD3F0;
-    --bg2:#FF277B;
-    --card:#FFF7D6;
-    --txt:#000;
-    --muted:#7D7777;
-    --radius:40px;
+ --bg1:#FFD3F0;
+ --bg2:#FF277B;
+ --card:#FFF7D6;
+ --txt:#000;
+ --muted:#7D7777;
+ --radius:40px;
+
 }
 
+
 body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+ height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ font-family: Arial , Helvetica, sans-serif;
+ background: linear-gradient(135deg, var(--bg1), var(--bg2));
 }
 
 .container{
-    width: 1000px;
-    min-height: 600px;
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 50px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+ width: 1000px;
+ min-width: 600px;
+ background:var(--card);
+ border-radius:var(--radius);
+ padding: 50px;
+ box-shadow:0 15px 40px rgba(255, 255, 255, 0.2);
 }
-
-/* TOPO */
 
 .topbar{
     display: flex;
@@ -159,7 +160,10 @@ body{
     font-weight: bold;
 }
 
-/* CARD PRINCIPAL */
+
+/* ===============================
+    CARD PRINCIPAL
+  =============================== */
 
 .card{
     background: rgba(255,255,255,0.35);
@@ -177,7 +181,10 @@ body{
     margin-bottom: 25px;
 }
 
-/* BOTÕES */
+
+/* ===============================
+  BOTÕES
+  =============================== */
 
 .nav{
     display: flex;
@@ -189,7 +196,7 @@ body{
 .nav a{
     text-decoration: none;
     background: #d8cdb3;
-    color: #ff8fb0;
+    color: #FF277B;
     padding: 15px 25px;
     border-radius: 15px;
     font-weight: bold;
@@ -201,7 +208,10 @@ body{
     transform: scale(1.03);
 }
 
-/* KPIs */
+
+/* ===============================
+  KPI'S
+  =============================== */
 
 .kpis{
     display: grid;
@@ -226,8 +236,27 @@ body{
     font-weight: bold;
 }
 
-/* RESPONSIVO */
 
+ /* ===============================
+  FONTE
+  =============================== */
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.bodoni-moda-uniquifier {
+ font-family: "Bodoni Moda", serif;
+ font-optical-sizing: auto;
+ font-weight: weight;
+ font-style: normal;
+}
+
+/* ===============================
+  FIM DA FONTE
+  =============================== */
+
+
+/* ===============================
+  RESPONSIVO
+  =============================== */
 @media(max-width: 900px){
 
     .container{
@@ -271,7 +300,7 @@ body{
     <div class="topbar">
 
         <div class="brand">
-            <h1>Dashboard</h1>
+            <h1 class="bodoni-moda-uniquifier">Dashboard</h1>
             <small>Painel do sistema</small>
         </div>
 
@@ -289,7 +318,7 @@ body{
 
     <div class="card">
 
-        <h2>
+        <h2 class="bodoni-moda-uniquifier">
             Bem-vindo(a), <?php echo htmlspecialchars($nome); ?>!
         </h2>
 
