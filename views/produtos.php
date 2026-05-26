@@ -17,175 +17,6 @@ return "public/assets/img/produto_sem_foto.png";
 <head>
 <meta charset="utf-8">
 <title>Produtos</title>
-<link rel="stylesheet" href="public/assets/css/style.css">
-  <style>
-
-.produto{
- margin:0;
- padding:0;
- box-sizing:border-box;
-}
-
-
-:root{
- --bg1:#FFD3F0;
- --bg2:#FF277B;
- --card:#FFF7D6;
- --txt:#000;
- --muted:#7D7777;
- --radius:35px;
-
-}
-
-
-body{
- height:100vh;
- display:flex;
- justify-content:center;
- align-items:center;
- font-family: Arial , Helvetica, sans-serif;
- background: linear-gradient(135deg, var(--bg1), var(--bg2));
-}
-
-
-
-
-  </style>
-
-
-
-
-
-
-
-</head>
-<body>
-      <div class="produto">
-<div class="header">
-<div class="container header-inner">
-<div>
-<strong>Loja Pink Honey</strong>
-<span class="badge">Produtos</span>
-
-</div>
-<div class="user">
-Olá, <strong><?= htmlspecialchars($_SESSION['nome'] ?? 'Usuário') ?></strong>
-<a class="btn btn-ghost" href="index.php?controller=auth&action=logout">Sair</a>
-</div>
-</div>
-</div>
-<div class="container grid">
-<div class="card">
-<h2><?= $editar ? "Editar Produto #".(int)$editar['id'] : "Cadastrar Produto" ?></h2>
-<form method="post" action="index.php?controller=produto&action=salvar" enctype="multipart/form-data">
-<input type="hidden" name="id" value="<?= $editar ? (int)$editar['id'] : 0 ?>">
-<div class="form-group">
-<label>Categoria</label>
-<select class="input" name="categoria_id" required>
-<option value="">Selecione...</option>
-<?php foreach ($categorias as $c): ?>
-<option value="<?= (int)$c['id'] ?>"
-<?= $editar && (int)$editar['categoria_id'] === (int)$c['id'] ? 'selected' : '' ?>>
-<?= htmlspecialchars($c['nome']) ?>
-</option>
-<?php endforeach; ?>
-</select>
-</div>
-<div class="form-group">
-<label>Nome</label>
-<input class="input" type="text" name="nome" required
-value="<?= $editar ? htmlspecialchars($editar['nome']) : '' ?>">
-</div>
-<div class="form-group">
-<label>Descrição (opcional)</label>
-<textarea class="input" name="descricao" rows="3"><?= $editar ?
-htmlspecialchars($editar['descricao'] ?? '') : '' ?></textarea>
-</div>
-<div class="form-group">
-<label>Imagem do produto (opcional)</label>
-<input class="input" type="file" name="imagem" accept="image/png, image/jpeg, image/webp">
-<small class="muted">Formatos: JPG, PNG, WEBP (até 2MB). Salva como ID do produto.</small>
-</div>
-<div class="actions">
-<button class="btn btn-primary" type="submit">Salvar</button>
-<a class="btn" href="index.php?controller=produto&action=index">Limpar</a>
-</div>
-</form>
-</div>
-<div class="card">
-<h2>Lista de Produtos</h2>
-<table class="table">
-<thead>
-<tr>
-<th>Imagem</th>
-<th>ID</th>
-<th>Nome</th>
-<th>Categoria</th>
-<th>Status</th>
-
-<th style="width:220px;">Ações</th>
-</tr>
-</thead>
-<tbody>
-<?php foreach ($produtos as $p): ?>
-<tr>
-<td>
-<img class="thumb" src="<?= imagemProdutoUrl((int)$p['id']) ?>" alt="produto">
-</td>
-<td>#<?= (int)$p['id'] ?></td>
-<td><?= htmlspecialchars($p['nome']) ?></td>
-<td><?= htmlspecialchars($p['categoria_nome']) ?></td>
-<td>
-<?= ((int)$p['ativo'] === 1) ? '<span class="tag ok">Ativo</span>' : '<span class="tag
-off">Inativo</span>' ?>
-</td>
-<td>
-<a class="btn" href="index.php?controller=produto&action=index&id=<?= (int)$p['id']
-?>">Editar</a>
-<?php if ((int)$p['ativo'] === 1): ?>
-<a class="btn btn-danger"
-href="index.php?controller=produto&action=toggle&id=<?= (int)$p['id'] ?>&ativo=0"
-onclick="return confirm('Inativar este produto?')">Inativar</a>
-<?php else: ?>
-<a class="btn btn-success"
-href="index.php?controller=produto&action=toggle&id=<?= (int)$p['id'] ?>&ativo=1">Ativar</a>
-<?php endif; ?>
-<a class="btn btn-danger"
-href="index.php?controller=produto&action=deletar&id=<?= (int)$p['id'] ?>"
-onclick="return confirm('⚠️ DELETAR permanentemente? Não há volta!')">Excluir</a>
-</td>
-</tr>
-<?php endforeach; ?>
-</tbody>
-</div>
-</table>
-</div>
-</div>
-</body>
-</html>
-
-
-/////////////////// CÓDIGO DO CHAT ///////////////
-
-<?php
-// helper simples para resolver imagem por ID sem usar banco
-function imagemProdutoUrl(int $produtoId): string
-{
-$baseFs = __DIR__ . "/../public/uploads/produtos/";
-$baseUrl = "public/uploads/produtos/";
-foreach (['jpg','png','webp'] as $ext) {
-if (file_exists($baseFs . $produtoId . '.' . $ext)) {
-return $baseUrl . $produtoId . '.' . $ext;
-}
-}
-return "public/assets/img/produto_sem_foto.png";
-}
-?>
-<!doctype html>
-<html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<title>Produtos</title>
 
 <style>
 
@@ -224,7 +55,7 @@ HEADER
 }
 
 .header-inner{
-    max-width:1400px;
+    max-width:1350px;
     margin:auto;
     display:flex;
     justify-content:space-between;
@@ -241,7 +72,7 @@ HEADER
 }
 
 .logo h1{
-    font-size:28px;
+    font-size:40px;
 }
 
 .badge{
@@ -269,20 +100,22 @@ HEADER
     grid-template-columns:400px 1fr;
     gap:30px;
 }
-
 .card{
     background:var(--card);
     border-radius:35px;
     padding:35px;
     box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    overflow:hidden;
 }
-
 .card h2{
     margin-bottom:25px;
-    font-size:32px;
+    font-size:40px;
 }
 
-/* FORM */
+
+/* ===============================
+  FORMULÁRIO
+  =============================== */
 
 .form-group{
     display:flex;
@@ -355,26 +188,64 @@ textarea.input{
     background:#ececec;
 }
 
-
- /* ===============================
+/* ===============================
 TABELA
-  =============================== */
+=============================== */
 
 .table{
     width:100%;
     border-collapse:collapse;
+    table-layout:fixed; 
+}
+
+.table thead tr{
+    border-bottom:2px solid rgba(0,0,0,0.1);
 }
 
 .table th{
-    text-align:left;
-    padding-bottom:15px;
-    font-size:15px;
+    text-align:center; 
+    padding:18px 10px;
+    font-size:16px;
+    font-weight:bold;
+    color:#000;
 }
 
 .table td{
-    padding:15px 10px;
+    text-align:center; 
+    padding:18px 10px;
     border-top:1px solid rgba(0,0,0,0.1);
     vertical-align:middle;
+}
+
+
+.table th:nth-child(1),
+.table td:nth-child(1){
+    width:120px;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2){
+    width:80px;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3){
+    width:220px;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4){
+    width:180px;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5){
+    width:140px;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6){
+    width:250px;
 }
 
 .thumb{
