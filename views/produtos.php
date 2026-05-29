@@ -131,12 +131,14 @@ HEADER
 
 .input{
     width:100%;
+    max-width: 100%;
     padding:15px;
     border:none;
     border-radius:18px;
     background:#c8c1ab;
     font-size:15px;
     outline:none;
+    box-sizing: border-box;
 }
 
 textarea.input{
@@ -230,21 +232,26 @@ TABELA
 
 .table th:nth-child(3),
 .table td:nth-child(3){
-    width:220px;
+    width:180px;
 }
 
 .table th:nth-child(4),
 .table td:nth-child(4){
-    width:180px;
+    width:150px;
 }
 
 .table th:nth-child(5),
 .table td:nth-child(5){
-    width:140px;
+    width:170px;
 }
 
 .table th:nth-child(6),
 .table td:nth-child(6){
+    width:140px;
+}
+
+.table th:nth-child(7),
+.table td:nth-child(7){
     width:250px;
 }
 
@@ -405,6 +412,18 @@ RESPONSIVO
 
             <div class="form-group">
 
+             <label>Marca</label>
+
+             <input class="input"
+             type="text"
+             name="marca"
+            required
+            value="<?= $editar ? htmlspecialchars($editar['marca'] ?? '') : '' ?>">
+
+</div>
+            
+            <div class="form-group">
+
                 <label>Descrição (opcional)</label>
 
                 <textarea class="input"
@@ -458,9 +477,10 @@ RESPONSIVO
                     <th>Imagem</th>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Marca</th>
                     <th>Categoria</th>
                     <th>Ativo</th>
-                    <th>Ações</th>
+    
                 </tr>
 
             </thead>
@@ -480,7 +500,7 @@ RESPONSIVO
                     <td>#<?= (int)$p['id'] ?></td>
 
                     <td><?= htmlspecialchars($p['nome']) ?></td>
-
+                    <td><?= htmlspecialchars($p['marca']) ?></td>
                     <td><?= htmlspecialchars($p['categoria_nome']) ?></td>
 
                     <td>
