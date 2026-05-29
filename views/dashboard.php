@@ -82,7 +82,7 @@ body{
   =============================== */
 
 .card{
-    background: rgba(255,255,255,0.35);
+    background: rgba(255, 0, 128, 0.25);
     padding: 35px;
     border-radius: 30px;
 }
@@ -171,7 +171,7 @@ body{
 
 
 /* ===============================
-CARROSSEL
+   CARROSSEL
 =============================== */
 
 .carousel{
@@ -320,7 +320,7 @@ CARROSSEL
     </div>
 
     <div class="slide">
-        <img src="public/assets/img/banner4.png" alt="banner4">
+        <img src="public/assets/img/banner7.png" alt="banner4">
     </div>
 
 </div>
@@ -358,7 +358,7 @@ CARROSSEL
 
             <div class="kpi">
                 <div class="label">Vendas (mês)</div>
-                <div class="value">150</div>
+                <div class="value">0</div>
             </div>
 
             <div class="kpi">
