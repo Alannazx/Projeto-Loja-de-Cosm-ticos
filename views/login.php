@@ -113,14 +113,31 @@ a{
 url('https://moocyn.com/wp-content/uploads/2023/03/a0469987c74a3f9abcf6449f2c0dc2f6.jpg') center/cover no-repeat;
 }
 
+.left{
+    width:50%;
+    height:100%;
+    overflow:hidden;
+}
+
+.left img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.container{
+    width:1000px;
+    height:600px;
+    display:flex;
+    overflow:hidden;
+}
+
 /* =========================
   LOGIN DIREITA
 ========================= */
 .right{
  width:50%;
-
  padding:50px;
-
  display:flex;
  flex-direction:column;
  justify-content:center;
@@ -372,10 +389,10 @@ label{
 <body>
 <div class="container">
 
- <!-- IMAGEM -->
- <div class="left"></div>
-
- <!-- LOGIN -->
+ <div class="left">
+ <img src="public/assets/img/sheglamlogin.jpg" alt="Logo">
+ </div>
+ 
  <div class="right">
 
   <div class="brand">
