@@ -23,6 +23,7 @@ $this->onlyAdmin();
 $id = (int)($_POST['id'] ?? 0);
 $categoriaId = (int)($_POST['categoria_id'] ?? 0);
 $nome = trim($_POST['nome'] ?? '');
+$marca = trim($_POST['marca'] ?? '');
 $descricao = trim($_POST['descricao'] ?? '');
 
 
@@ -33,11 +34,11 @@ die("Dados inválidos.");
 $produtoModel = new Produto();
 if ($id > 0) {
 // Atualiza produto
-$produtoModel->atualizar($id, $categoriaId, $nome, $descricao);
+$produtoModel->atualizar($id, $categoriaId, $nome, $marca, $descricao);
 $this->salvarImagemDoProduto($id); // upload opcional
 } else {
 // Insere produto e pega ID para nomear a imagem
-$novoId = $produtoModel->inserir($categoriaId, $nome, $descricao);
+$novoId = $produtoModel->inserir($categoriaId, $nome, $marca, $descricao);
 $this->salvarImagemDoProduto($novoId); // upload opcional
 }
 header("Location: index.php?controller=produto&action=index");
