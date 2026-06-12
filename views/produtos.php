@@ -99,7 +99,9 @@ HEADER
     display:grid;
     grid-template-columns:400px 1fr;
     gap:30px;
+    align-items:start;
 }
+
 .card{
     background:var(--card);
     border-radius:35px;
